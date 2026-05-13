@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dr. Lucas Mello — advogado especialista em Direito Trabalhista e Previdenciário. Consulta inicial gratuita. Atendimento em todo o Brasil." />
+  <meta name="keywords" content="advogado trabalhista, advogado previdenciário, INSS, demissão, horas extras, Dr. Lucas Mello" />
+  <meta name="author" content="Dr. Lucas Mello" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Lucas Mello | Direito Trabalhista & Previdenciário" />
+  <meta property="og:description" content="Demissão sem justa causa, horas extras não pagas, benefício negado pelo INSS — consulta inicial gratuita." />
+  <meta property="og:image" content="https://placehold.co/1200x630/0A0A0F/C9A84C?text=Dr.+Lucas+Mello" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <title>Dr. Lucas Mello | Direito Trabalhista &amp; Previdenciário</title>
+
+  <!--
+    WHATSAPP: Troque apenas o número abaixo (substitua DDD+numero, só dígitos, sem espaços).
+    Ex.: 11999998888 -> https://wa.me/5511999998888?text=...
+    Também atualize o placeholder do telefone na dobra final e o link href="#whatsapp" se usar âncoras.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========== CSS Variables ========== */
+    :root {
+      --bg-primary: #0A0A0F;
+      --bg-secondary: #10101A;
+      --accent: #C9A84C;
+      --text-primary: #F0F0F0;
+      --text-secondary: #8A8A9A;
+      --border-gold: rgba(201, 168, 76, 0.2);
+      --whatsapp: #25D366;
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      z-index: 9998;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 40px);
+    }
+
+    /* ========== Reveal on scroll ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--transition-smooth), transform 0.75s var(--transition-smooth);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== Utilities ========== */
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    .accent-line {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 0 auto 2rem;
+    }
+
+    /* WhatsApp CTA button */
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 1rem 1.75rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.25s var(--transition-smooth), box-shadow 0.25s, background 0.25s;
+    }
+
+    .btn-wa--primary {
+      background: linear-gradient(135deg, #d4b55a 0%, var(--accent) 50%, #a88a3a 100%);
+      color: #0a0a0f;
+      box-shadow: 0 4px 24px rgba(201, 168, 76, 0.35);
+    }
+
+    .btn-wa--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.45);
+    }
+
+    .btn-wa--outline {
+      background: transparent;
+      border-color: var(--border-gold);
+      color: var(--accent);
+    }
+
+    .btn-wa--outline:hover {
+      background: rgba(201, 168, 76, 0.08);
+      border-color: var(--accent);
+    }
+
+    .btn-wa--final {
+      font-size: 1.05rem;
+      padding: 1.15rem 2rem;
+    }
+
+    .wa-icon {
+      flex-shrink: 0;
+    }
+
+    /* ========== HERO ========== */
+    /*
+      Imagens de fundo (sessão 1): coloque os arquivos em assets/hero/
+      • Mobile (padrão): altere a URL em --hero-bg-mobile (ex.: .webp, .png)
+      • Desktop: altere --hero-bg-desktop (aplica a partir de 768px)
+      Caminhos são relativos ao index.html na raiz do projeto.
+    */
+    .hero {
+      --hero-bg-mobile: url("assets/hero/background-mobile.webp");
+      --hero-bg-desktop: url("assets/hero/background-desktop.webp");
+
+      width: 100%;
+      /* Mobile: altura exata da arte 9:16 em função da largura da tela */
+      height: calc(100vw * 16 / 9);
+      min-height: calc(100vw * 16 / 9);
+      max-height: calc(100vw * 16 / 9);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: left;
+      position: relative;
+      padding: max(0.3rem, env(safe-area-inset-top)) 0 1.85rem;
+      background-color: var(--bg-primary);
+      background-image:
+        linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+        var(--hero-bg-mobile);
+      /* Caixa já é 9:16 — cobre a área 1:1 com a arte */
+      background-size: 48px 48px, 48px 48px, cover;
+      background-position: center, center, center bottom;
+      background-repeat: no-repeat;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        max-height: none;
+        aspect-ratio: auto;
+        justify-content: center;
+        padding: 2rem 0 4rem;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+          var(--hero-bg-desktop);
+        background-size: 48px 48px, 48px 48px, cover;
+        background-position: center, center, center;
+      }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border-gold);
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+      background: rgba(16, 16, 26, 0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    @media (max-width: 767px) {
+      .hero-badge {
+        margin-bottom: 0.65rem;
+        font-size: 0.68rem;
+        padding: 0.3rem 0.72rem;
+        letter-spacing: 0.05em;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.58rem, 6.8vw, 2.05rem);
+        line-height: 1.12;
+        margin-bottom: 0.55rem;
+      }
+
+      .hero-sub {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 0.85rem;
+      }
+
+      .hero-cta-wrap {
+        gap: 0.6rem;
+      }
+
+      .hero .btn-wa {
+        font-size: 0.86rem;
+        padding: 0.78rem 1.2rem;
+      }
+
+      .hero-micro {
+        font-size: 0.7rem;
+        gap: 0.35rem 0.55rem;
+      }
+
+      .scroll-hint {
+        bottom: 0.85rem;
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      /* Mobile mín. ~38px; desktop até ~64px */
+      font-size: clamp(2.375rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(180deg, #fff 0%, #e8e8e8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 0 2rem;
+      line-height: 1.65;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .hero-micro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-micro .stars {
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 1.5rem;
+      left: clamp(20px, 4vw, 40px);
+      color: var(--accent);
+      opacity: 0.6;
+      animation: chevron-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes chevron-pulse {
+      0%, 100% { opacity: 0.4; transform: translateY(0); }
+      50% { opacity: 0.95; transform: translateY(8px); }
+    }
+
+    /* ========== Section alternation ========== */
+    .section {
+      padding: clamp(4rem, 10vw, 6rem) 0;
+    }
+
+    .section--alt {
+      background-color: var(--bg-secondary);
+    }
+
+    /* ========== Problems grid ========== */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .problem-card {
+      padding: 1.5rem 1.35rem;
+      background: rgba(10, 10, 15, 0.6);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.05), 0 8px 32px rgba(0, 0, 0, 0.35);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+
+    .section--alt .problem-card {
+      background: rgba(16, 16, 26, 0.8);
+    }
+
+    .problem-card:hover {
+      border-color: rgba(201, 168, 76, 0.45);
+      box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.15), 0 12px 40px rgba(0, 0, 0, 0.45);
+      transform: translateY(-4px);
+    }
+
+    .problem-card .icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      filter: grayscale(0.2);
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .problem-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .problem-cta-text {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 500;
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .problem-cta-wrap {
+      text-align: center;
+    }
+
+    /* ========== Authority split ========== */
+    .authority {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .authority {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* Moldura 4:5 — imagem: assets/imagem-sessao3.jpeg */
+    .foto-advogado {
+      width: 100%;
+      max-width: 400px;
+      margin-inline: auto;
+      aspect-ratio: 4 / 5;
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 0 40px rgba(201, 168, 76, 0.08), 0 24px 48px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+
+    .foto-advogado img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+    }
+
+    .authority-copy h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .diff-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .diff-list li {
+      margin-bottom: 1.35rem;
+      padding-left: 0;
+    }
+
+    .diff-list li strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .diff-list li strong::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .diff-list li span {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      display: block;
+      padding-left: 1.35rem;
+    }
+
+    /* ========== Testimonials ========== */
+    .testimonial-carousel {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 0.75rem;
+      margin-inline: -20px;
+      padding-inline: 20px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (min-width: 900px) {
+      .testimonial-carousel {
+        overflow-x: visible;
+        margin-inline: 0;
+        padding-inline: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      flex: 0 0 min(100%, 340px);
+      scroll-snap-align: center;
+      padding: 1.75rem 1.5rem;
+      background: rgba(10, 10, 15, 0.65);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .section--alt .testimonial-card {
+      background: rgba(16, 16, 26, 0.75);
+    }
+
+    .testimonial-card blockquote {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .testimonial-card cite {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Final CTA block */
+    .final-cta {
+      margin-top: 3.5rem;
+      padding: clamp(2.5rem, 6vw, 3.5rem);
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, rgba(16, 16, 26, 0.95) 50%);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 0 60px rgba(201, 168, 76, 0.06);
+    }
+
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      margin-bottom: 1rem;
+    }
+
+    .final-cta p {
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.7;
+    }
+
+    .final-cta-btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Telefone: substitua (XX) XXXXX-XXXX pelo número real */
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      border-bottom: 1px dashed var(--border-gold);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .phone-link:hover {
+      color: var(--accent);
+    }
+
+    /* ========== Footer ========== */
+    .footer {
+      padding: 2.5rem 0 2rem;
+      border-top: 1px solid var(--border-gold);
+      background: var(--bg-primary);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+
+    .footer-tag {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    /* ========== Floating WhatsApp ========== */
+    .float-wa {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
+      z-index: 9999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.85);
+      transition: opacity 0.35s var(--transition-smooth), transform 0.35s var(--transition-smooth), visibility 0.35s;
+      animation: wa-pulse 2.2s ease-in-out infinite;
+    }
+
+    .float-wa.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .float-wa:hover {
+      animation: none;
+      transform: scale(1.06);
+    }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.45); }
+      50% { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.55), 0 0 0 12px rgba(37, 211, 102, 0); }
+    }
+
+    .float-wa::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%) translateX(6px);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .float-wa:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    @media (max-width: 480px) {
+      .float-wa::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- URL WhatsApp unificada — troque 55XXXXXXXXXXX pelo DDI+DDD+número (só dígitos) -->
+  <!-- Exemplo final: https://wa.me/5511999998888?text=Olá%2C%20Dr.%20Lucas%20Mello%21%20Gostaria%20de%20uma%20consulta. -->
+  <script>
+    window.WHATSAPP_URL = "https://wa.me/55XXXXXXXXXXX?text=Olá%2C%20Dr.%20Lucas%20Mello%21%20Gostaria%20de%20uma%20consulta.";
+  </script>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="topo">
+    <div class="container hero-inner">
+      <div class="hero-badge reveal">
+        <span aria-hidden="true">⚖</span>
+        Direito Trabalhista &amp; Previdenciário
+      </div>
+      <h1 class="reveal">Seus Direitos Foram Ignorados.<br />Está na Hora de Cobrar.</h1>
+      <p class="hero-sub reveal">
+        Demissão sem justa causa, horas extras não pagas,
+        benefício negado pelo INSS — o Dr. Lucas Mello resolve.
+        Consulta inicial gratuita.
+      </p>
+      <div class="hero-cta-wrap reveal">
+        <a class="btn-wa btn-wa--primary js-wa-link" href="#" aria-label="Falar agora pelo WhatsApp — gratuito">
+          <svg class="wa-icon" width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0f" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Falar Agora com o Dr. Lucas — É Gratuito
+        </a>
+        <div class="hero-micro">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>Mais de 500 casos resolvidos • Atendimento em todo o Brasil</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ========== PROBLEMAS ========== -->
+  <section class="section section--alt" id="problemas">
+    <div class="container">
+      <div class="accent-line reveal"></div>
+      <h2 class="section-title reveal">Você está em alguma dessas <span>situações</span>?</h2>
+
+      <div class="problem-grid">
+        <article class="problem-card reveal">
+          <div class="icon" aria-hidden="true">⚖️</div>
+          <h3>Fui Demitido Sem Justa Causa</h3>
+          <p>Rescisão errada, FGTS bloqueado ou aviso prévio não pago.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="icon" aria-hidden="true">🕐</div>
+          <h3>Fiz Horas Extras e Nunca Recebi</h3>
+          <p>Banco de horas irregular ou adicional noturno ignorado.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="icon" aria-hidden="true">🏥</div>
+          <h3>Meu Benefício Foi Negado pelo INSS</h3>
+          <p>Auxílio-doença, aposentadoria ou pensão recusados indevidamente.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="icon" aria-hidden="true">📋</div>
+          <h3>Assédio ou Pressão Para Pedir Demissão</h3>
+          <p>Ambientes de trabalho abusivos que ferem seus direitos.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="icon" aria-hidden="true">🩺</div>
+          <h3>Acidente de Trabalho Sem Amparo</h3>
+          <p>Empresa omissa e seguro negado depois de um acidente.</p>
+        </article>
+        <article class="problem-card reveal">
+          <div class="icon" aria-hidden="true">👴</div>
+          <h3>Aposentadoria Atrasada ou Mal Calculada</h3>
+          <p>Tempo de contribuição desconsiderado ou cálculo errado do INSS.</p>
+        </article>
+      </div>
+
+      <p class="problem-cta-text reveal">
+        Se você se identificou com qualquer um desses casos,
+        você pode ter direito a uma indenização. Descubra agora.
+      </p>
+      <div class="problem-cta-wrap reveal">
+        <a class="btn-wa btn-wa--primary js-wa-link" href="#">
+          <svg class="wa-icon" width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0f" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Quero Saber Meus Direitos — Falar com o Dr. Lucas
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AUTORIDADE ========== -->
+  <section class="section" id="autoridade">
+    <div class="container">
+      <div class="accent-line reveal"></div>
+      <h2 class="section-title reveal">Por que o <span>Dr. Lucas Mello</span>?</h2>
+
+      <div class="authority">
+        <div class="foto-advogado reveal">
+          <img
+            src="assets/imagem-sessao3.jpeg"
+            alt="Dr. Lucas Mello, advogado especialista em Direito Trabalhista e Previdenciário"
+            width="800"
+            height="1000"
+            decoding="async"
+            loading="lazy"
+          />
+        </div>
+        <div class="authority-copy reveal">
+          <ul class="diff-list">
+            <li>
+              <strong>Especialista exclusivo em Trabalhista e Previdenciário</strong>
+              <span>Foco total significa resultados superiores.</span>
+            </li>
+            <li>
+              <strong>Consulta Inicial 100% Gratuita</strong>
+              <span>Você descobre seus direitos sem pagar nada.</span>
+            </li>
+            <li>
+              <strong>Atendimento Presencial e Online</strong>
+              <span>Em qualquer cidade do Brasil.</span>
+            </li>
+            <li>
+              <strong>Honorários Só no Êxito</strong>
+              <span>Você não paga nada se não ganhar o caso.</span>
+            </li>
+            <li>
+              <strong>Mais de 500 Casos Resolvidos</strong>
+              <span>Histórico sólido de vitórias para trabalhadores e aposentados.</span>
+            </li>
+          </ul>
+          <a class="btn-wa btn-wa--primary js-wa-link" href="#">
+            <svg class="wa-icon" width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0f" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Agendar Consulta Gratuita
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEPOIMENTOS + CTA FINAL ========== -->
+  <section class="section section--alt" id="depoimentos">
+    <div class="container">
+      <div class="accent-line reveal"></div>
+      <h2 class="section-title reveal">O que dizem nossos <span>clientes</span></h2>
+
+      <div class="testimonial-carousel reveal" role="region" aria-label="Depoimentos de clientes">
+        <article class="testimonial-card">
+          <blockquote>
+            "Tentei resolver meu benefício por conta própria por 2 anos.
+            Com o Dr. Lucas, em 4 meses recebi tudo o que era meu por direito."
+          </blockquote>
+          <cite>— Marcos T., Aposentado por Invalidez</cite>
+        </article>
+        <article class="testimonial-card">
+          <blockquote>
+            "Fui demitida e não sabia que tinha direito a muito mais do
+            que me pagaram. O Lucas recuperou quase R$18.000 para mim."
+          </blockquote>
+          <cite>— Fernanda R., Ex-funcionária CLT</cite>
+        </article>
+        <article class="testimonial-card">
+          <blockquote>
+            "Profissional sério, comunicativo e que realmente luta pelo
+            cliente. Recomendo de olhos fechados."
+          </blockquote>
+          <cite>— Roberto S., Caso de Acidente de Trabalho</cite>
+        </article>
+      </div>
+
+      <div class="final-cta reveal">
+        <h2>Não deixe seus direitos prescreverem.</h2>
+        <p>
+          Em direito trabalhista, prazos existem.
+          Quanto mais você espera, mais difícil fica.
+          Fale hoje com o Dr. Lucas Mello — a consulta é gratuita.
+        </p>
+        <div class="final-cta-btns">
+          <a class="btn-wa btn-wa--primary btn-wa--final js-wa-link" href="#">
+            <svg class="wa-icon" width="24" height="24" viewBox="0 0 24 24" fill="#0a0a0f" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Falar Agora com o Dr. Lucas Mello
+          </a>
+          <!-- Telefone: substitua href="tel:..." e o texto pelo número real -->
+          <a class="phone-link js-phone-placeholder" href="tel:+5500000000000">📞 Ou ligue: (XX) XXXXX-XXXX</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">Dr. Lucas Mello | OAB/XX 00000</div>
+      <p class="footer-tag">Direito Trabalhista &amp; Previdenciário</p>
+      <nav class="footer-links" aria-label="Rodapé">
+        <!-- Link placeholder — aponte para sua política quando existir -->
+        <a href="#">Política de Privacidade</a>
+      </nav>
+      <p class="footer-copy">© 2025 Dr. Lucas Mello. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a
+    class="float-wa js-float-wa js-wa-link"
+    href="#"
+    data-tooltip="Falar com o Dr. Lucas"
+    aria-label="Falar com o Dr. Lucas pelo WhatsApp"
+  >
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    (function () {
+      var WA = window.WHATSAPP_URL;
+
+      function applyWaLinks() {
+        document.querySelectorAll(".js-wa-link").forEach(function (el) {
+          el.setAttribute("href", WA);
+          el.setAttribute("target", "_blank");
+          el.setAttribute("rel", "noopener noreferrer");
+        });
+      }
+
+      applyWaLinks();
+
+      // Hero entra já visível (acima da dobra), sem depender do primeiro frame do observer
+      document.querySelectorAll(".hero .reveal").forEach(function (el) {
+        el.classList.add("visible");
+      });
+
+      // IntersectionObserver — revelar ao rolar
+      var revealEls = document.querySelectorAll(".reveal:not(.visible)");
+      if ("IntersectionObserver" in window) {
+        var obs = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        );
+        revealEls.forEach(function (el) {
+          obs.observe(el);
+        });
+      } else {
+        revealEls.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+
+      // Botão flutuante após 300px
+      var floatBtn = document.querySelector(".js-float-wa");
+      function toggleFloat() {
+        if (window.scrollY > 300) {
+          floatBtn.classList.add("is-visible");
+        } else {
+          floatBtn.classList.remove("is-visible");
+        }
+      }
+      toggleFloat();
+      window.addEventListener("scroll", toggleFloat, { passive: true });
+    })();
+  </script>
+</body>
+</html>
